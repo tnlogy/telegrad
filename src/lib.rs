@@ -160,6 +160,12 @@ impl NodeStack {
     }
 }
 
+/**  This pointer to the NodeStack needs to have stack to be able to implement
+ * traits for std::ops:Add etc to be able to create expressions with
+ * ```
+ *   let f = x * w + b;
+ * ```
+ */
 #[derive(Debug, Clone)]
 pub struct NodePtr {
     stack: NodeStackPtr,
